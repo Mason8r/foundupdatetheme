@@ -1,6 +1,7 @@
 <?php 
 
 include('functions/wp_curator_options.php');
+include('functions/wp_update.php');
 //include('functions/wp_rss_curator.php');
 
 add_theme_support( 'menus' );
@@ -162,12 +163,5 @@ function new_excerpt_more( $more ) {
 	return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
-//Initialize the update checker.
-require 'functions/wp_update_checker.php';
-$update_checker = new ThemeUpdateChecker(
-    'CashCurator',
-    'http://waverleymedia.com/tims-minions-theme/info.json'
-);
 
 ?>
