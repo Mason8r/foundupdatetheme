@@ -13,10 +13,12 @@ class top_bar_walker extends Walker_Nav_Menu {
     }
 	
     function start_el( &$output, $object, $depth = 0, $args = array(), $current_object_id = 0 ) {
+        
         $item_html = '';
+
         parent::start_el( $item_html, $object, $depth, $args );	
 		
-        $output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
+        //$output .= ( $depth == 0 ) ? '<li class="divider"></li>' : '';
 		
         $classes = empty( $object->classes ) ? array() : (array) $object->classes;	
 		

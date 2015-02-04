@@ -1,29 +1,87 @@
 /*
-Theme Name: CashCurator
+Theme Name: CashCurator 2.1
 Theme URI: www.timsminions.com
-Author: Stu Mason
+Author: Techy Minion / timsminions.com
 Author URI: http://waverleymedia.com
 Description: Cash Curator Theme for Tims Minions / Waverley Media
-Version: 2.0.0
-Notes: Auto update, Contact curation, other bits and pieces. 
+Version: 2.1
+Notes: Auto update, Facebook Share, Looping AdSense 
 */
 
 /* ==========================================================================
    Common Elements
    ==========================================================================*/
+   .page-heading {
+      padding: 0.5em;
+      color: #fff;
+      display: inline-block;
+      background-color: #062270;
+   }
+
+   .advert {
+      margin: 1rem 0;
+   }
 
 /* ==========================================================================
    Header
    ==========================================================================*/
+   header {
+      background: #062270;
+      padding: 1% 0;
+   }
+
+   #logo {
+      color: #fff;
+      border-bottom: 1px solid #666;
+      padding: 1% 0;
+   }
+/* ==========================================================================
+   Navbar
+   ==========================================================================*/
+   .top-bar {
+      background: none;
+   }
+
+   .top-bar-section ul li {
+     background: none;
+   }
+
+   .top-bar-section li:not(.has-form) a:not(.button) {
+      background: none;
+      font-size: 1.3rem;
+      transition: all 0.2s;
+   }
+
+   .top-bar-section li:not(.has-form) a:not(.button):hover {
+      color: #008CBA;
+      background: none;
+   }
 
 /* ==========================================================================
    Footer
    ==========================================================================*/
+   footer {
+      background: #062270;
+      padding: 4% 0;
+      color: #fff;
+   }
 
 /* ==========================================================================
    Curator / Home Page
    ==========================================================================*/
+   #ad-top {
+      padding: 1% 0;
+   }
 
+   #hero {
+      padding: 1% 0;
+      border-bottom: 5px solid #dcdcdc; 
+   }
+
+   .large-post {
+      border-bottom: 5px solid #dcdcdc; 
+      padding-top: 1rem;     
+   }
 /* ==========================================================================
    Single Post Page
    ==========================================================================*/

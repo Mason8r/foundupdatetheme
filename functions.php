@@ -1,13 +1,46 @@
 <?php 
 
-include('functions/wp_foundation_navwalker.php');
+include('functions/wp_curator_options.php');
+//include('functions/wp_rss_curator.php');
 
-add_theme_support('menus');
+add_theme_support( 'menus' );
+add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'custom-background' );
+
+//Create the default categories required for this theme
+//wp_create_category('hero');
+//wp_create_category('curator');
+wp_insert_term(
+	'Hero Post', 
+	'category', 
+	array(
+    	'description' => 'Main post on home page.',
+    	'slug' => 'hero-post'
+    ));
+
+wp_insert_term(
+	'curator', 
+	'category', 
+	array(
+    	'description' => 'Posts which appear on the sites homepage / category pages',
+    	'slug' => 'curator'
+    ));
+
+wp_insert_term(
+	'featured', 
+	'category', 
+	array(
+    	'description' => 'Featured posts',
+    	'slug' => 'featured-posts'
+    ));
+
 
 /**
  * Register Menus
  * http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
  */
+include('functions/wp_foundation_navwalker.php');
+
 register_nav_menus(array(
     'top-bar-l' => 'Left Top Bar', // registers the menu in the WordPress admin menu editor
     'top-bar-r' => 'Right Top Bar'
@@ -119,10 +152,6 @@ function create_new_post_type() {
 }
 //add_action('init', 'create_new_post_type');
 
-/* Allow Features Images */
-add_theme_support( 'post-thumbnails' ); 
-add_image_size( 'three', 330, 9999, true );
-
 /* Set excerpt lengh to 20 */
 function custom_excerpt_length( $length ) {
 	return 25;
@@ -134,5 +163,11 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+//Initialize the update checker.
+require 'functions/wp_update_checker.php';
+$update_checker = new ThemeUpdateChecker(
+    'CashCurator',
+    'http://waverleymedia.com/tims-minions-theme/info.json'
+);
 
 ?>
